@@ -72,9 +72,11 @@ const UploadModal = ({
   const [selectedProjectName, setSelectedProjectName] = useState("");
 
   // Fix the process.env reference issue
-  const baseUrl = import.meta.env?.VITE_API_BASE_URL || "http://localhost:8000";
+  const baseUrl =
+    import.meta.env?.VITE_API_BASE_URL ||
+    "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com";
   // If you're using Create React App instead of Vite, use this:
-  // const baseUrl = window.env?.REACT_APP_API_BASE_URL || 'http://localhost:8000/api';
+  // const baseUrl = window.env?.REACT_APP_API_BASE_URL || 'https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com/api';
 
   // Send a signal to parent component to show animation on the page
   const emitProcessingSignal = (status, data = {}) => {
@@ -1017,95 +1019,95 @@ const UploadModal = ({
 
                 <div className="mb-6">
                   {/* Dataset form sections */}
-                    <div className="space-y-5">
-                      <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
-                        <label className="block font-medium mb-2 text-gray-700 flex items-center">
-                          Dataset File{" "}
-                          <span className="text-red-500 ml-1">*</span>
-                        </label>
-                        <p className="text-sm text-gray-500 mb-3">
-                          Upload CSV, JSON, or DataFrame file
-                        </p>
-                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50 hover:bg-blue-50 hover:border-blue-300 transition cursor-pointer">
-                          <input
-                            type="file"
-                            id="dataset"
-                            className="hidden"
-                            onChange={(e) => handleFileUpload(e, "dataset")}
-                            required
-                          />
-                          <label
-                            htmlFor="dataset"
-                            className="cursor-pointer w-full h-full flex flex-col items-center"
-                          >
-                            <div className="text-blue-500 text-4xl mb-2">
-                              {formData.dataset ? "📊" : "⬆️"}
-                            </div>
-                            <p className="text-gray-700 font-medium mb-1">
-                              {formData.dataset
-                                ? "Change dataset"
-                                : "Upload dataset file"}
-                            </p>
-                            <p className="text-gray-500 text-sm">
-                              {formData.dataset
-                                ? formData.dataset.name
-                                : "Click or drag file here"}
-                            </p>
-                            {formData.dataset && (
-                              <span className="mt-2 inline-flex items-center px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">
-                                <svg
-                                  className="h-2 w-2 mr-1"
-                                  fill="currentColor"
-                                  viewBox="0 0 8 8"
-                                >
-                                  <circle cx="4" cy="4" r="3" />
-                                </svg>
-                                Dataset selected
-                              </span>
-                            )}
-                          </label>
-                        </div>
-                      </div>
-
-                      <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
-                        <label className="block font-medium mb-2 text-gray-700 flex items-center">
-                          Dataset Type{" "}
-                          <span className="text-red-500 ml-1">*</span>
-                        </label>
-                        <select
-                          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white"
-                          value={formData.dataset_type || ""}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              dataset_type: e.target.value,
-                            })
-                          }
+                  <div className="space-y-5">
+                    <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
+                      <label className="block font-medium mb-2 text-gray-700 flex items-center">
+                        Dataset File{" "}
+                        <span className="text-red-500 ml-1">*</span>
+                      </label>
+                      <p className="text-sm text-gray-500 mb-3">
+                        Upload CSV, JSON, or DataFrame file
+                      </p>
+                      <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50 hover:bg-blue-50 hover:border-blue-300 transition cursor-pointer">
+                        <input
+                          type="file"
+                          id="dataset"
+                          className="hidden"
+                          onChange={(e) => handleFileUpload(e, "dataset")}
                           required
+                        />
+                        <label
+                          htmlFor="dataset"
+                          className="cursor-pointer w-full h-full flex flex-col items-center"
                         >
-                          <option value="" disabled>
-                            Select dataset type
-                          </option>
-                          <option value="text">Text</option>
-                          <option value="tabular">Tabular</option>
-                          <option value="categorical">Categorical</option>
-                        </select>
-                        <div className="relative">
-                          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                            <svg
-                              className="fill-current h-4 w-4"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                            >
-                              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                            </svg>
+                          <div className="text-blue-500 text-4xl mb-2">
+                            {formData.dataset ? "📊" : "⬆️"}
                           </div>
-                        </div>
-                        <p className="text-sm text-gray-500 mt-1">
-                          Select the type that best describes your dataset
-                        </p>
+                          <p className="text-gray-700 font-medium mb-1">
+                            {formData.dataset
+                              ? "Change dataset"
+                              : "Upload dataset file"}
+                          </p>
+                          <p className="text-gray-500 text-sm">
+                            {formData.dataset
+                              ? formData.dataset.name
+                              : "Click or drag file here"}
+                          </p>
+                          {formData.dataset && (
+                            <span className="mt-2 inline-flex items-center px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">
+                              <svg
+                                className="h-2 w-2 mr-1"
+                                fill="currentColor"
+                                viewBox="0 0 8 8"
+                              >
+                                <circle cx="4" cy="4" r="3" />
+                              </svg>
+                              Dataset selected
+                            </span>
+                          )}
+                        </label>
                       </div>
                     </div>
+
+                    <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 transition-colors">
+                      <label className="block font-medium mb-2 text-gray-700 flex items-center">
+                        Dataset Type{" "}
+                        <span className="text-red-500 ml-1">*</span>
+                      </label>
+                      <select
+                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white"
+                        value={formData.dataset_type || ""}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            dataset_type: e.target.value,
+                          })
+                        }
+                        required
+                      >
+                        <option value="" disabled>
+                          Select dataset type
+                        </option>
+                        <option value="text">Text</option>
+                        <option value="tabular">Tabular</option>
+                        <option value="categorical">Categorical</option>
+                      </select>
+                      <div className="relative">
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                          <svg
+                            className="fill-current h-4 w-4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                          </svg>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1">
+                        Select the type that best describes your dataset
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
