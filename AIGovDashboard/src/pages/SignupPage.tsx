@@ -83,7 +83,7 @@ const SignupPage: React.FC = () => {
 
     setIsLoading(true);
     const response2 = await fetch(
-      "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
+      "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
       {
         method: "POST",
         headers: {
@@ -749,7 +749,7 @@ const SignupPage: React.FC = () => {
       setIsLoading(true);
       setError(null);
       const response2 = await fetch(
-        "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
+        "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
         {
           method: "POST",
           headers: {

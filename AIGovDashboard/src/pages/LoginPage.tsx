@@ -39,7 +39,7 @@ export default function LoginPage() {
 
         // Second token endpoint (localhost)
         const response2 = await fetch(
-          "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
+          "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
           {
             method: "POST",
             headers: {
@@ -84,7 +84,7 @@ export default function LoginPage() {
       setIsLoading(true);
       setError("");
       const response2 = await fetch(
-        "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
+        "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
         {
           method: "POST",
           headers: {

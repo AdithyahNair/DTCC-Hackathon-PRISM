@@ -9,7 +9,6 @@ import { Boxes, ArrowRight, Bot, Activity } from "lucide-react";
 import { supabase } from "../lib/supabase";
 
 const projectTypes = [
- 
   {
     id: "generic",
     name: "Supervised machine learning model",
@@ -56,7 +55,7 @@ export default function NewProjectPage() {
       console.log(localStorage.getItem("access_token"));
       // API call to localhost
       const response = await fetch(
-        "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com-dtcc-dot-block-convey-p1.uc.r.appspot.com/projects/create",
+        "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com/projects/create",
         {
           method: "POST",
           headers: {
@@ -201,7 +200,6 @@ export default function NewProjectPage() {
                       <h3 className="font-medium text-gray-900 text-sm">
                         {type.name}
                       </h3>
-                     
                     </div>
                   </div>
                 ))}
