@@ -82,16 +82,19 @@ const SignupPage: React.FC = () => {
     }
 
     setIsLoading(true);
-    const response2 = await fetch("http://localhost:8000/auth/signin", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: "admin@gmail.com",
-        password: "admin",
-      }),
-    });
+    const response2 = await fetch(
+      "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: "admin@gmail.com",
+          password: "admin",
+        }),
+      }
+    );
 
     if (!response2.ok) {
       throw new Error("Failed to fetch local token");
@@ -745,16 +748,19 @@ const SignupPage: React.FC = () => {
     try {
       setIsLoading(true);
       setError(null);
-      const response2 = await fetch("http://localhost:8000/auth/signin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: "admin@gmail.com",
-          password: "admin",
-        }),
-      });
+      const response2 = await fetch(
+        "https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com-dtcc-dot-block-convey-p1.uc.r.appspot.com/auth/signin",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: "admin@gmail.com",
+            password: "admin",
+          }),
+        }
+      );
       // Use the signInWithGoogle function from AuthContext
       await signInWithGoogle();
 

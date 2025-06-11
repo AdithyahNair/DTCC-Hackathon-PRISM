@@ -177,7 +177,7 @@ const RiskAssessmentPage: React.FC = () => {
       // Check if models/data exist for this project
       try {
         const modelsResponse = await axios.get(
-          `http://localhost:8000/ml/${id}/models/list`,
+          `https://prism-backend-dtcc-dot-block-convey-p1.uc.r.appspot.com-dtcc-dot-block-convey-p1.uc.r.appspot.com/ml/${id}/models/list`,
           config
         );
 
